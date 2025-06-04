@@ -269,7 +269,7 @@ module.exports = async (req, res) => {
         // The second argument is the path for the webhook. Vercel handles routing,
         // so often just '/' is fine here if your function is at /api/bot.
         // Or, if you set a specific webhook path with Telegram, match it.
-        const webhookCallback = bot.webhookCallback(`/${process.env.VERCEL_URL ? '' : 'api/index'}`); // Path relative to your domain
+        const webhookCallback = bot.webhookCallback('api/index'); // Path relative to your domain
 
         await webhookCallback(req, res);
 
